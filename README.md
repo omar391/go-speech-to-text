@@ -83,7 +83,7 @@ TODO: convert it to POST method
 curl http://127.0.0.1:5000/all-data?token=<token>
 ```
 
-### Search AUDIO text with criteria: name
+### Search AUDIO text with criteria: text
 ```
 curl http://127.0.0.1:5000/search?token=<token>&text=beautiful
 
