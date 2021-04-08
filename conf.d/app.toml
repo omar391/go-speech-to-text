@@ -5,4 +5,4 @@ addr = ":5000"
 db_name = "./data/STT_DB.db"
 
 #jwt secret key
-jwt_secret = "FA49AC1DEF7BBD6FC48055E696F811EA51D9B6D8C88FF5FFE137BBE91518276A"
+jwt_secret = "1TXwNU2x2j8x7bay5pmKeoBtRKir/FM1V8GbHc3lqOg="

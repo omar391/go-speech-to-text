@@ -1,11 +1,17 @@
-//Package srv host clinic search function as http api service
-package srv
+//Package router serve service controllers
+package router
 
 import (
+	"net/http"
+	"stt-service/models"
+	"stt-service/service"
+	"stt-service/utils"
 	"time"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/secure"
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,10 +24,28 @@ func Start(addr string) error {
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 
+	//add security middleware
+	attachSecurityLayers(r)
+
+	//setup cookies based sessions
+	store := cookie.NewStore([]byte("secret"))
+	r.Use(sessions.Sessions("mysession", store))
+
+	//setup API specific routers
+	setupApiRouter(r)
+
+	//setup WEB specific routers
+	setupWebRouters(r)
+
+	return r
+}
+
+//add security middleware
+func attachSecurityLayers(r *gin.Engine) {
 	//setting-up cors headers
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"*"},
-		AllowMethods:     []string{"GET"},
+		AllowMethods:     []string{"GET", "POST"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
@@ -36,8 +60,48 @@ func setupRouter() *gin.Engine {
 		ContentSecurityPolicy: "default-src 'self'",
 		IENoOpen:              true,
 		ReferrerPolicy:        "strict-origin-when-cross-origin",
-		//SSLProxyHeaders:       map[string]string{"X-Forwarded-Proto": "https"},
 	}))
+}
+
+//setup only API specific endpoints
+func setupApiRouter(r *gin.Engine) {
+	r.POST("/login", func(c *gin.Context) {
+		email, fe := c.GetPostForm("email")
+		pass, fp := c.GetPostForm("password")
+
+		response := models.ApiBooleanResponse{}
+		if !fe || !fp {
+			response.IsScuess = false
+			response.Msg = "Please provide ALL login credentials!"
+
+		} else {
+			response, id := service.Login(email, pass)
+			if response.IsScuess {
+				response.Token, _ = utils.GenerateJWT(id)
+			}
+		}
+		c.JSON(http.StatusOK, response)
+	})
+
+	r.POST("/register", func(c *gin.Context) {
+
+		email, fe := c.GetPostForm("email")
+		pass, fp := c.GetPostForm("password")
+		name, fn := c.GetPostForm("name")
+
+		response := models.ApiBooleanResponse{}
+		if !fe || !fp || !fn {
+			response.IsScuess = false
+			response.Msg = "Please provide ALL registration credentials!"
+
+		} else {
+			response, id := service.AddNewUser(&models.User{Email: email, Password: pass, Name: name})
+			if response.IsScuess {
+				response.Token, _ = utils.GenerateJWT(id)
+			}
+		}
+		c.JSON(http.StatusOK, response)
+	})
 
 	r.GET("/search", func(c *gin.Context) {
 		// // text, _ := c.GetQuery("text")
@@ -52,8 +116,11 @@ func setupRouter() *gin.Engine {
 
 		// c.JSON(http.StatusOK, list)
 	})
+}
 
-	r.Static("/data", "./data")
+//setup only WEB specific endpoints
+func setupWebRouters(r *gin.Engine) {
 
-	return r
+	//set static assets to load directly
+	r.Static("/web/static", "./static")
 }

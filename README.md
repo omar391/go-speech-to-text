@@ -65,6 +65,10 @@ go build -o stt-service
 go clean -testcache  
 go test ./...
 ```
+## Hot code reloading: 
+```
+nodemon --exec go run main.go --signal SIGTERM
+```
 
 ## API endpoint: 
 

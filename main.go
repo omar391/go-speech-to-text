@@ -2,21 +2,14 @@ package main
 
 import (
 	"log"
-	"stt-service/models"
-	"stt-service/service"
+	"stt-service/conf"
+	"stt-service/router"
 )
 
 func main() {
 
-	// if err := srv.Start(conf.Config.Addr); err != nil {
-	// 	log.Println("start: ", err)
-	// }
-
-	user := &models.User{Name: "Test 1", Email: "test@test.com", Password: "xyz123"}
-	result := service.Login(user.Email, user.Password)
-	if !result.IsScuess {
-		log.Fatal("Creation failed!")
-	} else {
-		log.Println("logged in successfully!")
+	//starting the http routers with the address/port set in the config file
+	if err := router.Start(conf.Config.ADDR); err != nil {
+		log.Println("start: ", err)
 	}
 }
