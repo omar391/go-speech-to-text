@@ -9,13 +9,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//Start start api server
+//Start start http web server + API endpoints
 func Start(addr string) error {
-	go func() {
-		//delay to load clinics, let http server start first
-		time.Sleep(1 * time.Second)
-
-	}()
 	return setupRouter().Run(addr)
 }
 

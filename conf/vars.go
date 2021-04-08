@@ -35,6 +35,7 @@ func init() {
 
 //AppCfg configuration of app
 type AppCfg struct {
-	Addr    string `toml:"addr"`
-	DB_NAME string `toml:"db_name"`
+	ADDR       string `toml:"addr"`
+	DB_NAME    string `toml:"db_name"`
+	JWT_SECRET string `toml:"jwt_secret"`
 }

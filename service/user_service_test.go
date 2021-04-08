@@ -5,9 +5,11 @@ import (
 	"testing"
 )
 
-func TestUserCreation(m *testing.T) {
-	AddNewUser(&models.User{Email: "ding@dong.om", Name: "wow", Password: GeneratePasswordHash("")})
-	// s := []byte("")
-
-	// assert len(s)!=0
+//testing if we could create a new user
+func TestAddNewUser(t *testing.T) {
+	user := &models.User{Name: "Test 1", Email: "test@test.com", Password: "xyz123"}
+	result := AddNewUser(user)
+	if !result.IsScuess {
+		t.Fatal("Creation failed!")
+	}
 }
