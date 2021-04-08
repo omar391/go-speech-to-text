@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "6f9bb9eb-307a-40fa-99d8-849928e24a29",
+		"name": "clinics-apis-postman-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "state-test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/search?state=ca",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "ca"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "name-test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/search?name=good",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "good"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "availavility-test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/search?opening=23:00",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "opening",
+							"value": "23:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "multiple-test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/search?opening=12:00&name=center&state=ca",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "opening",
+							"value": "12:00"
+						},
+						{
+							"key": "name",
+							"value": "center"
+						},
+						{
+							"key": "state",
+							"value": "ca"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "127.0.0.1:5000"
+		}
+	]
+}
