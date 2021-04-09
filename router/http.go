@@ -95,9 +95,11 @@ func setupApiRouter(r *gin.Engine) {
 			response.Msg = "Please provide ALL registration credentials!"
 
 		} else {
-			response, id := service.AddNewUser(&models.User{Email: email, Password: pass, Name: name})
+			var id uint
+			response, id = service.AddNewUser(&models.User{Email: email, Password: pass, Name: name})
 			if response.IsScuess {
 				response.Token, _ = utils.GenerateJWT(id)
+				response.Msg = "Registration successfull!"
 			}
 		}
 		c.JSON(http.StatusOK, response)

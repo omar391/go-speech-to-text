@@ -19,7 +19,7 @@ func GenerateJWT(user_id uint) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
 	// Sign and get the complete encoded token as a string
-	tokenString, err := token.SignedString(conf.Config.JWT_SECRET)
+	tokenString, err := token.SignedString([]byte(conf.Config.JWT_SECRET))
 	if err != nil {
 		log.Println("Error in JWT token generation")
 		return "", err

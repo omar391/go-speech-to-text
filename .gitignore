@@ -20,3 +20,4 @@ doc/
 
 __debug_bin
 go.sum
+data/STT_DB.db
