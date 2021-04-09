@@ -6,3 +6,7 @@ db_name = "./data/STT_DB.db"
 
 #jwt secret key
 jwt_secret = "1TXwNU2x2j8x7bay5pmKeoBtRKir/FM1V8GbHc3lqOg="
+
+#session exipery timeout in seconds
+web_session_timeout = 86400
+

@@ -3,6 +3,7 @@ package router
 
 import (
 	"net/http"
+	"stt-service/conf"
 	"stt-service/models"
 	"stt-service/service"
 	"stt-service/utils"
@@ -63,6 +64,19 @@ func attachSecurityLayers(r *gin.Engine) {
 	}))
 }
 
+//save authenticated sessions to
+func saveAuthSession(c *gin.Context, token string) {
+	if b := isSessionAuthenticated(c, token); !b {
+		c.SetCookie("gin_cookie", token, conf.Config.WEB_SESSION_TIMEOUT, "/", "", false, true)
+	}
+}
+
+//check if the session is authenticated
+func isSessionAuthenticated(c *gin.Context, token string) bool {
+	_, err := c.Cookie("gin_cookie")
+	return err == nil && utils.VerifyJWT(token)
+}
+
 //setup only API specific endpoints
 func setupApiRouter(r *gin.Engine) {
 	r.POST("/login", func(c *gin.Context) {
@@ -78,6 +92,7 @@ func setupApiRouter(r *gin.Engine) {
 			response, id := service.Login(email, pass)
 			if response.IsScuess {
 				response.Token, _ = utils.GenerateJWT(id)
+				saveAuthSession(c, response.Token)
 			}
 		}
 		c.JSON(http.StatusOK, response)
@@ -99,7 +114,7 @@ func setupApiRouter(r *gin.Engine) {
 			response, id = service.AddNewUser(&models.User{Email: email, Password: pass, Name: name})
 			if response.IsScuess {
 				response.Token, _ = utils.GenerateJWT(id)
-				response.Msg = "Registration successfull!"
+				saveAuthSession(c, response.Token)
 			}
 		}
 		c.JSON(http.StatusOK, response)

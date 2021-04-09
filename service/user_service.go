@@ -46,6 +46,7 @@ func AddNewUser(user *models.User) (result models.ApiBooleanResponse, id uint) {
 
 	repository.CreateUser(user)
 	result.IsScuess = true
+	result.Msg = "Registration successfull!"
 	return result, user.ID
 }
 
