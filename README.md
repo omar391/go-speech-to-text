@@ -1,6 +1,7 @@
 # Speech to Text service using GO-Lang (db: `SQLite3`)
 ⭐ For API we are using `GIN` http server.
 <br>⭐ We have demonstrated how to use `security related headers` for the endpoints.
+<br>⭐ Used FULLTEXT search indexing using FTS4 module to filter audio data faster.
 <br>⭐ Set-up `docker-compose` for easier deployments.
 <br>⭐ Set-up `GitHub actions` for CI purposes.
 <br>⭐ Included `TEST` suites

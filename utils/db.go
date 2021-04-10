@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"log"
 	"stt-service/conf"
 
 	"gorm.io/driver/sqlite"
@@ -8,9 +9,9 @@ import (
 )
 
 func OpenSQLiteDB() *gorm.DB {
-	db, err := gorm.Open(sqlite.Open(conf.Config.DB_NAME), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open(conf.Config.DATA_DIR+conf.Config.DB_NAME), &gorm.Config{})
 	if err != nil {
-		panic("failed to connect database")
+		log.Fatal("failed to connect database")
 	}
 
 	return db

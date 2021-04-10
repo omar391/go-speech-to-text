@@ -21,3 +21,4 @@ doc/
 __debug_bin
 go.sum
 data/STT_DB.db
+conf.d/gcp-stt-api-key.json

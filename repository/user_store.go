@@ -11,7 +11,7 @@ func init() {
 	db.AutoMigrate(models.User{})
 }
 
-// Create
+// Create a new user
 func CreateUser(user *models.User) {
 	db := utils.OpenSQLiteDB()
 	db.Create(user)
@@ -34,12 +34,3 @@ func GetUserByEmail(user_email string) models.User {
 	db.First(user, "email = ?", user_email)
 	return *user
 }
-
-// //match user info
-// func GetUserByEmailAndPass(user_email string, user_password string) models.User {
-// 	db := utils.OpenSQLiteDB()
-
-// 	user := &models.User{}
-// 	db.First(user, "email = ? AND password = ?", user_email, user_password)
-// 	return *user
-// }

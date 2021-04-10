@@ -35,8 +35,10 @@ func init() {
 
 //AppCfg configuration of app
 type AppCfg struct {
-	ADDR                string `toml:"addr"`
-	DB_NAME             string `toml:"db_name"`
-	JWT_SECRET          string `toml:"jwt_secret"`
-	WEB_SESSION_TIMEOUT int    `toml:"web_session_timeout"`
+	ADDR                           string `toml:"addr"`
+	DATA_DIR                       string `toml:"data_dir"`
+	DB_NAME                        string `toml:"db_name"`
+	JWT_SECRET                     string `toml:"jwt_secret"`
+	WEB_SESSION_TIMEOUT            int    `toml:"web_session_timeout"`
+	GOOGLE_APPLICATION_CREDENTIALS string `toml:"gcp_stt_api_key"`
 }

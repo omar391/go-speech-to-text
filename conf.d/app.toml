@@ -1,8 +1,11 @@
 # listen addr of http api server
 addr = ":5000"
 
+# data directory
+data_dir = "./data/"
+
 #sqlite3 database name
-db_name = "./data/STT_DB.db"
+db_name = "STT_DB.db"
 
 #jwt secret key
 jwt_secret = "1TXwNU2x2j8x7bay5pmKeoBtRKir/FM1V8GbHc3lqOg="
@@ -10,3 +13,5 @@ jwt_secret = "1TXwNU2x2j8x7bay5pmKeoBtRKir/FM1V8GbHc3lqOg="
 #session exipery timeout in seconds
 web_session_timeout = 86400
 
+# Check detailed information at: https://cloud.google.com/speech-to-text/docs/libraries#cloud-console
+gcp_stt_api_key = "conf.d/gcp-stt-api-key.json"

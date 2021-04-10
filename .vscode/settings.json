@@ -6,7 +6,6 @@
         //"wp-*.*": true,
         "wp-config.*": false,
         "xmlrpc.php": true,
-        ".vscode/": true,
         "*/**/cache/": true,
         "*/**/uploads/": true,
         "*/**/infinitewp/": true,
@@ -17,4 +16,16 @@
         "build/": true,
         "**/.history/": true
     },
+    "cSpell.words": [
+        "Qscale",
+        "UNINDEXED",
+        "apiv",
+        "floostack",
+        "gorm",
+        "rowid",
+        "rtmp",
+        "speechpb",
+        "streamid",
+        "vframes"
+    ],
 }
