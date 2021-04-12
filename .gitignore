@@ -22,3 +22,6 @@ __debug_bin
 go.sum
 data/STT_DB.db
 conf.d/gcp-stt-api-key.json
+**/node_modules
+web/pnpm-lock.yaml
+**/admin_lte

@@ -106,5 +106,5 @@ func setupApiRouter(r *gin.Engine) {
 func setupWebRouters(r *gin.Engine) {
 
 	//set static assets to load directly
-	r.Static("/web/static", "./static")
+	r.Static("/web/", "./web/static")
 }

@@ -74,6 +74,7 @@ func filter(c *gin.Context) {
 		// Get audio text list
 		response.Data = service.FilterAudioData(page_no, 100, search_term, uint(user_id))
 		response.IsSuccess = true
+		response.Token = token
 	}
 
 	c.JSON(http.StatusOK, response)
