@@ -13,9 +13,9 @@ var (
 // Migrate the schema on startup
 func init() {
 	db := utils.OpenSQLiteDB()
-	db.AutoMigrate(models.STTData{})
+	db.AutoMigrate(&models.STTData{})
 
-	//Create a full text search virtual table for text audio data
+	// Create a full text search virtual table for text audio data
 
 	if !db.Migrator().HasTable(fts_table) {
 
@@ -53,39 +53,38 @@ func init() {
 }
 
 // Create a new AUDIO file row
-func CreateNewAudioField(audio_text models.STTData) {
+func CreateNewAudioField(audio_text *models.STTData) {
 	db := utils.OpenSQLiteDB()
 	db.Create(audio_text)
 }
 
 //get count of audio data rows
-func GetTotalRowCount() int64 {
+func GetTotalDataRowCount(user_id uint) uint {
 	db := utils.OpenSQLiteDB()
 	var count int64
-	db.Model(&models.STTData{}).Count(&count)
+	db.Model(&models.STTData{}).Where("user_id = ?", user_id).Count(&count)
 
-	return count
+	return uint(count)
 }
 
-//get all audio data by limit, offset
-func GetAudioData(page_no int, limit int) []map[string]interface{} {
+// get all audio data by limit, offset
+func GetAllAudioData(offset int, limit int, user_id uint) []map[string]interface{} {
 	db := utils.OpenSQLiteDB()
 
 	// Get all records
 	var results []map[string]interface{}
-	db.Model(models.STTData{}).Offset(page_no * limit).Limit(limit).Find(&results)
+	db.Model(models.STTData{}).Select("original_audio_file_name", "original_audio_file_path", "text").Offset(offset).Limit(limit).Where("user_id = ?", user_id).Find(&results)
 
 	return results
 }
 
-//get all audio data by limit, offset, and text
-func FilterAudioData(page_no int, limit int, text_to_find string) []map[string]interface{} {
+// get all audio data by limit, offset, and text
+func FilterAudioData(offset int, limit int, text_to_find string, user_id uint) []map[string]interface{} {
 	db := utils.OpenSQLiteDB()
 
 	// Get all filtered records
 	var results []map[string]interface{}
-	offset := page_no * limit
-	db.Model(models.STTData{}).Raw("SELECT * FROM ? WHERE ? MATCH '?' OFFSET ? LIMIT ?", fts_table, fts_table, text_to_find, offset, limit).Find(&results)
+	db.Model(models.STTData{}).Raw("SELECT original_audio_file_name, original_audio_file_path, text FROM stt_data_fts WHERE user_id = ? AND stt_data_fts MATCH ? LIMIT 100 OFFSET 0", user_id, text_to_find, limit, offset).Find(&results)
 
 	return results
 }

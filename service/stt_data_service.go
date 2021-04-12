@@ -6,47 +6,90 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strings"
 	"stt-service/conf"
 	"stt-service/models"
 	"stt-service/repository"
+	"time"
 
 	speech "cloud.google.com/go/speech/apiv1"
 	"github.com/floostack/transcoder/ffmpeg"
 	speechpb "google.golang.org/genproto/googleapis/cloud/speech/v1"
 )
 
-// Return data output
-func SaveTextFromAudio(orig_file_name string, orig_file_full_path string, user_id uint, is_keep_file bool) string {
-	new_file_path, err := convertAudio(orig_file_full_path)
-	if err != nil {
-		return "File conversion failed!"
+func getOffset(page_no int, limit int, user_id uint) int {
+	// Get total rows for current session user
+	count := repository.GetTotalDataRowCount(user_id)
+	offset := (page_no - 1) * limit
+	if uint(offset) > count {
+		return -1
+	}
+	return offset
+}
+
+// Get all data by pagination
+func GetAudioDataByPage(page_no int, limit int, user_id uint) []map[string]interface{} {
+	offset := getOffset(page_no, limit, user_id)
+	if offset == -1 {
+		return nil
 	}
 
-	text, err := processAudioInGCP(new_file_path)
+	return repository.GetAllAudioData(offset, limit, user_id)
+}
+
+// Filter data with query string and pagination
+func FilterAudioData(page_no int, limit int, text_to_find string, user_id uint) []map[string]interface{} {
+	offset := getOffset(page_no, limit, user_id)
+	if offset == -1 {
+		return nil
+	}
+
+	return repository.FilterAudioData(offset, limit, text_to_find, user_id)
+}
+
+// Return audio transcript
+func SaveTextFromAudio(orig_file_name string, orig_file_full_path string, user_id uint, is_keep_file bool) (string, error) {
+	new_file_path, err := convertAudio(orig_file_name, orig_file_full_path)
+	var text string
 	if err != nil {
-		return "File cloud transcription task failed!"
+		text = "File conversion failed!"
+
+	} else {
+		// time for new file to be unlocked from previous conversion process
+		time.Sleep(1 * time.Millisecond)
+
+		// Process audio transcript in the cloud
+		text, err = processAudioInGCP(new_file_path)
+		if err != nil {
+			text = "File cloud transcription task failed!"
+
+		} else {
+			text = strings.TrimRight(text, "\n")
+		}
 	}
 
 	go func() {
 		//remove the file if not asked to be stored
 		if !is_keep_file {
 			os.Remove(new_file_path)
-			new_file_path = "File is not stored!"
+			new_file_path = "File is deleted!"
 		}
 
-		//save audio transcript
-		repository.CreateNewAudioField(models.STTData{
-			UserId:                user_id,
-			OriginalAudioFileName: orig_file_name,
-			OriginalAudioFilePath: new_file_path,
-			Text:                  text,
-		})
+		if err == nil {
+			//save audio transcript
+			repository.CreateNewAudioField(&models.STTData{
+				UserId:                user_id,
+				OriginalAudioFileName: orig_file_name,
+				OriginalAudioFilePath: new_file_path,
+				Text:                  text,
+			})
+		}
+
+		//delete original raw audio file
+		os.Remove(orig_file_full_path)
 	}()
 
-	//delete original raw audio file
-	go os.Remove(orig_file_full_path)
-
-	return text
+	return text, err
 }
 
 // Process local audio file to Google Cloud Speech API
@@ -97,14 +140,15 @@ func processAudioInGCP(filename string) (string, error) {
 	return buffer.String(), nil
 }
 
-//Convert media to FLAC audio format of max 60 sec.
-func convertAudio(file_to_convert string) (string, error) {
+// Convert media to FLAC audio format of max 60 sec.
+func convertAudio(original_name string, file_to_convert string) (string, error) {
 	//raw command: ffmpeg -i ./data/voice.mp4 -vn -y -t 5 -ar 24000 -ac 1 -compression_level 12 ./data/out.flac
 	d_true := true
-	duration := "60"
+	duration := "5"
 	audio_rate := 24000
 	audio_channels := 1
 	compression_level := 12
+	codec := "flac"
 
 	opts := ffmpeg.Options{
 		SkipVideo:        &d_true,
@@ -113,15 +157,16 @@ func convertAudio(file_to_convert string) (string, error) {
 		AudioRate:        &audio_rate,
 		AudioChannels:    &audio_channels,
 		CompressionLevel: &compression_level,
+		AudioCodec:       &codec,
 	}
 
 	ffmpegConf := &ffmpeg.Config{
 		FfmpegBinPath:   "ffmpeg",
 		FfprobeBinPath:  "ffprobe",
-		ProgressEnabled: true,
+		ProgressEnabled: false,
 	}
 
-	f, fr := ioutil.TempFile(conf.Config.DATA_DIR, "*.flac")
+	f, fr := ioutil.TempFile(conf.Config.DATA_DIR, original_name+"_*."+codec)
 	if fr != nil {
 		return "", fr
 	}
@@ -138,6 +183,7 @@ func convertAudio(file_to_convert string) (string, error) {
 	if err != nil {
 		return "", err
 	} else {
+		f.Sync()
 		return output_file, nil
 	}
 }

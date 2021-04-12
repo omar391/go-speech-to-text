@@ -6,22 +6,24 @@ import (
 	"stt-service/utils"
 )
 
-//login user
-func Login(user_email string, user_password string) (result models.ApiBooleanResponse, user_id uint) {
-	result.IsScuess = false
+// login user
+func Login(user_email string, user_password string) (result models.ApiResponse, user_id uint) {
+	result.IsSuccess = false
 	user_id = 0
 	if found, id := checkLoginCredentials(user_email, user_password); found {
-		result.IsScuess = true
+		result.IsSuccess = true
 		result.Msg = "Login successfull!"
 		user_id = id
+
+	} else {
+		result.Msg = "Incorrect login credentials! Please check your login info."
 	}
-	result.Msg = "Incorrect login credentials! Please check your login info."
 	return result, user_id
 }
 
-//Signup: add a new user to the repository
-func AddNewUser(user *models.User) (result models.ApiBooleanResponse, id uint) {
-	result.IsScuess = false
+// Sighup: add a new user to the repository
+func AddNewUser(user *models.User) (result models.ApiResponse, id uint) {
+	result.IsSuccess = false
 	id = 0
 
 	if user.Email == "" && utils.IsEmailValid(user.Email) {
@@ -45,7 +47,7 @@ func AddNewUser(user *models.User) (result models.ApiBooleanResponse, id uint) {
 	user.Password, _ = utils.GeneratePasswordHash(user.Password)
 
 	repository.CreateUser(user)
-	result.IsScuess = true
+	result.IsSuccess = true
 	result.Msg = "Registration successfull!"
 	return result, user.ID
 }

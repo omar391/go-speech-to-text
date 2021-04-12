@@ -2,10 +2,8 @@
 package router
 
 import (
-	"net/http"
+	"fmt"
 	"stt-service/conf"
-	"stt-service/models"
-	"stt-service/service"
 	"stt-service/utils"
 	"time"
 
@@ -30,7 +28,7 @@ func setupRouter() *gin.Engine {
 
 	//setup cookies based sessions
 	store := cookie.NewStore([]byte("secret"))
-	r.Use(sessions.Sessions("mysession", store))
+	r.Use(sessions.Sessions("jwt_session", store))
 
 	//setup API specific routers
 	setupApiRouter(r)
@@ -65,74 +63,43 @@ func attachSecurityLayers(r *gin.Engine) {
 }
 
 //save authenticated sessions to
-func saveAuthSession(c *gin.Context, token string) {
-	if b := isSessionAuthenticated(c, token); !b {
-		c.SetCookie("gin_cookie", token, conf.Config.WEB_SESSION_TIMEOUT, "/", "", false, true)
-	}
+func saveAuthSession(c *gin.Context, user_id uint, token string) {
+	user_id_str := fmt.Sprint(user_id)
+	c.SetCookie("gin_user", user_id_str, conf.Config.WEB_SESSION_TIMEOUT, "/", "", false, true)
+	session := sessions.Default(c)
+	session.Set(user_id_str, token)
+	session.Save()
 }
 
 //check if the session is authenticated
 func isSessionAuthenticated(c *gin.Context, token string) bool {
-	_, err := c.Cookie("gin_cookie")
-	return err == nil && utils.VerifyJWT(token)
+	user_id, err := getUserId(c)
+	return err == nil && sessions.Default(c).Get(user_id) == token && utils.VerifyJWT(token)
+}
+
+// retrive email from the cookie;
+// do not use this without calling isSessionAuthenticated method first
+func getUserId(c *gin.Context) (string, error) {
+	return c.Cookie("gin_user")
 }
 
 //setup only API specific endpoints
 func setupApiRouter(r *gin.Engine) {
-	r.POST("/login", func(c *gin.Context) {
-		email, fe := c.GetPostForm("email")
-		pass, fp := c.GetPostForm("password")
 
-		response := models.ApiBooleanResponse{}
-		if !fe || !fp {
-			response.IsScuess = false
-			response.Msg = "Please provide ALL login credentials!"
+	//Login API endpoint
+	r.POST("/login", login)
 
-		} else {
-			response, id := service.Login(email, pass)
-			if response.IsScuess {
-				response.Token, _ = utils.GenerateJWT(id)
-				saveAuthSession(c, response.Token)
-			}
-		}
-		c.JSON(http.StatusOK, response)
-	})
+	//Registration API endpoint
+	r.POST("/register", register)
 
-	r.POST("/register", func(c *gin.Context) {
+	//File Upload and Audio transcription API endpoint
+	r.POST("/transcribe", transcribe)
 
-		email, fe := c.GetPostForm("email")
-		pass, fp := c.GetPostForm("password")
-		name, fn := c.GetPostForm("name")
+	// Get all the uploaded transcribed data from current logged-in user
+	r.POST("/all-data", search_all)
 
-		response := models.ApiBooleanResponse{}
-		if !fe || !fp || !fn {
-			response.IsScuess = false
-			response.Msg = "Please provide ALL registration credentials!"
-
-		} else {
-			var id uint
-			response, id = service.AddNewUser(&models.User{Email: email, Password: pass, Name: name})
-			if response.IsScuess {
-				response.Token, _ = utils.GenerateJWT(id)
-				saveAuthSession(c, response.Token)
-			}
-		}
-		c.JSON(http.StatusOK, response)
-	})
-
-	r.GET("/search", func(c *gin.Context) {
-		// // text, _ := c.GetQuery("text")
-		// // list := modules.Search(strings.ToLower(text))
-
-		// c.JSON(http.StatusOK, list)
-	})
-
-	r.GET("/all-data", func(c *gin.Context) {
-		// text, _ := c.GetQuery("text")
-		// list := modules.Search(strings.ToLower(text))
-
-		// c.JSON(http.StatusOK, list)
-	})
+	// Get filtered data from search term from current logged-in user
+	r.POST("/filter", filter)
 }
 
 //setup only WEB specific endpoints

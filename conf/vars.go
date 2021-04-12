@@ -15,7 +15,7 @@ var (
 	Config AppCfg
 )
 
-//init initiale config from ./conf.d/app.toml
+//init initialize config from ./conf.d/app.toml
 func init() {
 
 	fileName, err := filepath.Abs("./conf.d/app.toml")
@@ -41,4 +41,6 @@ type AppCfg struct {
 	JWT_SECRET                     string `toml:"jwt_secret"`
 	WEB_SESSION_TIMEOUT            int    `toml:"web_session_timeout"`
 	GOOGLE_APPLICATION_CREDENTIALS string `toml:"gcp_stt_api_key"`
+	MAX_FILE_UPLOAD_SIZE           int    `toml:"max_file_upload_size"`
+	ALLOWED_FILE_EXTS              string `toml:"allowed_file_exts"`
 }

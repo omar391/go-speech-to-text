@@ -4,14 +4,20 @@ addr = ":5000"
 # data directory
 data_dir = "./data/"
 
-#sqlite3 database name
+# sqlite3 database name
 db_name = "STT_DB.db"
 
-#jwt secret key
+# jwt secret key
 jwt_secret = "1TXwNU2x2j8x7bay5pmKeoBtRKir/FM1V8GbHc3lqOg="
 
-#session exipery timeout in seconds
+# session exipery timeout in seconds
 web_session_timeout = 86400
 
 # Check detailed information at: https://cloud.google.com/speech-to-text/docs/libraries#cloud-console
 gcp_stt_api_key = "conf.d/gcp-stt-api-key.json"
+
+# max file upload size = 20 MB
+max_file_upload_size = 20
+
+# allowed file extensions
+allowed_file_exts = '\.(?i:mp[234]|avi|flac|wav|aac|webm|ogg)$'

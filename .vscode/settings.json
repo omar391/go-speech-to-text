@@ -17,15 +17,26 @@
         "**/.history/": true
     },
     "cSpell.words": [
+        "Csgt",
+        "EXTS",
         "Qscale",
+        "Rdescudv",
+        "Tabler",
+        "Tmaa",
         "UNINDEXED",
+        "WRWJ",
         "apiv",
         "floostack",
+        "gonic",
         "gorm",
+        "naoina",
         "rowid",
         "rtmp",
         "speechpb",
         "streamid",
         "vframes"
     ],
+    "todo-tree.tree.showBadges": false,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.tree.disableCompactFolders": true,
 }
