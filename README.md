@@ -1,16 +1,27 @@
+
+
 # Speech to Text service using GO-Lang (db: `SQLite3`)
 ⭐ For API we are using `GIN` http server.
 <br>⭐ We have demonstrated how to use `security related headers` for the endpoints.
 <br>⭐ Used FULL-TEXT search indexing using FTS4 module to filter audio data faster.
+<br>⭐ APP ensure security with statefull HMAC SHA256 JWT tokens.
 <br>⭐ Set-up `docker-compose` for easier deployments.
 <br>⭐ Set-up `GitHub actions` for CI purposes.
 <br>⭐ Included `TEST` suites
 <br>⭐ Included `POSTMAN` collections for easier testing.
 
+`DEMO app:` 
+
+<br>
+
+### `APP web interface`:
+
 
 <br>
 
 ### `POSTMAN` API testing:
+![image](https://user-images.githubusercontent.com/13569609/114550302-d863cc80-9c83-11eb-846b-4d0d9cfb6fdf.png)
+![image](https://user-images.githubusercontent.com/13569609/114550427-00533000-9c84-11eb-8af5-dde88fcb7e00.png)
 
 
 <br>
