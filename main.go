@@ -11,7 +11,7 @@ func main() {
 	//	starting the http routers with the address/port set in the config file
 	addr := conf.Config.ADDR
 	if os.Getenv("PORT") != "" {
-		addr = ":" + addr
+		addr = ":" + os.Getenv("PORT")
 	}
 
 	if err := router.Start(addr); err != nil {
