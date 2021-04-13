@@ -68,7 +68,7 @@ go test ./...
 ```
 ## Hot code reloading: 
 ```
-nodemon --exec go run main.go --signal SIGTERM
+nodemon -e js,go,json,html,css,toml --exec go run main.go --signal SIGTERM
 ```
 
 ## API endpoint: 

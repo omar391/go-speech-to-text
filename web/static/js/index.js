@@ -1,7 +1,7 @@
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
-const endpoint_root = "http://localhost:5000";
+
 
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");
@@ -15,32 +15,19 @@ signInButton.addEventListener("click", () => {
 function logged(data) {
   if (data.is_success) {
     localStorage.setItem("token", data.token);
-    alert("success!");
+    window.location.href = '/results.html'
   } else {
+    localStorage.removeItem("token");
     alert(data.msg);
   }
 }
 
 //JQUERY request handlers
 $(document).ready(function () {
-  prepareEndpointCall();
+  prepareEndpointCall_index();
 });
 
-function prepareEndpointCall() {
-  callAjax("#signIn_btn", "/login", "form#login-form", logged);
-  callAjax("#register_btn", "/register", "form#register-form", logged);
-}
-
-function callAjax(elm_id, endpoint, from_id, callback) {
-  $(elm_id).click(function () {
-    $.ajax({
-      url: endpoint_root + endpoint,
-      type: "post",
-      dataType: "json",
-      data: $(from_id).serialize(),
-      complete: function (data) {
-        callback(data.responseJSON);
-      },
-    });
-  });
+function prepareEndpointCall_index() {
+  subscribeAjaxEvent("#signIn_btn", "/login", "form#login-form", logged);
+  subscribeAjaxEvent("#register_btn", "/register", "form#register-form", logged);
 }

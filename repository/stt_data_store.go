@@ -73,7 +73,8 @@ func GetAllAudioData(offset int, limit int, user_id uint) []map[string]interface
 
 	// Get all records
 	var results []map[string]interface{}
-	db.Model(models.STTData{}).Select("original_audio_file_name", "original_audio_file_path", "text").Offset(offset).Limit(limit).Where("user_id = ?", user_id).Find(&results)
+	//db.Model(models.STTData{}).Select("original_audio_file_name", "original_audio_file_path", "text").Offset(offset).Limit(limit).Where("user_id = ?", user_id).Find(&results)
+	db.Model(models.STTData{}).Select("original_audio_file_name", "original_audio_file_path", "text").Where("user_id = ?", user_id).Find(&results)
 
 	return results
 }
@@ -84,7 +85,8 @@ func FilterAudioData(offset int, limit int, text_to_find string, user_id uint) [
 
 	// Get all filtered records
 	var results []map[string]interface{}
-	db.Model(models.STTData{}).Raw("SELECT original_audio_file_name, original_audio_file_path, text FROM stt_data_fts WHERE user_id = ? AND stt_data_fts MATCH ? LIMIT 100 OFFSET 0", user_id, text_to_find, limit, offset).Find(&results)
+	//db.Model(models.STTData{}).Raw("SELECT original_audio_file_name, original_audio_file_path, text FROM stt_data_fts WHERE user_id = ? AND stt_data_fts MATCH ? LIMIT 100 OFFSET 0", user_id, text_to_find, limit, offset).Find(&results)
+	db.Model(models.STTData{}).Raw("SELECT original_audio_file_name, original_audio_file_path, text FROM stt_data_fts WHERE user_id = ? AND stt_data_fts MATCH ?", user_id, text_to_find).Find(&results)
 
 	return results
 }

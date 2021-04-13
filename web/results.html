@@ -1,328 +1,309 @@
-<html lang="en" style="height: auto;"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" style="height: auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AdminLTE 3 | DataTables</title>
-  
+
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="admin_lte/plugins/fontawesome-free/css/all.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="admin_lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="admin_lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="admin_lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <!-- Theme style -->
-    <link rel="stylesheet" href="admin_lte/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="static/css/adminlte.min.css" />
   </head>
-  <body class="sidebar-mini" data-new-gr-c-s-check-loaded="14.983.0" data-gr-ext-installed="" style="height: auto;">
-  <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-      <!-- Left navbar links -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-        </li>
-        
-        
-      </ul>
-  
-      <!-- SEARCH FORM -->
-      <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-          <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-navbar" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-  
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
-        
-        <!-- Notifications Dropdown Menu -->
-        
-        <li class="nav-item">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            <i class="fas fa-expand-arrows-alt"></i>
-          </a>
-        </li>
-        
-      </ul>
-    </nav>
-    <!-- /.navbar -->
-  
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <a href="admin_lte/index3.html" class="brand-link">
-        <img src="admin_lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
-      </a>
-  
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar user (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="admin_lte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
-          </div>
-        </div>
-  
-        <!-- SidebarSearch Form -->
-        
-  
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library -->
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="admin_lte/index.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v1</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="admin_lte/index2.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v2</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="admin_lte/index3.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v3</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
-  
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 336px;">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1>DataTables</h1>
+  <body
+    class="sidebar-mini sidebar-collapse"
+    data-new-gr-c-s-check-loaded="14.983.0"
+    data-gr-ext-installed=""
+    style="height: auto"
+  >
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+              ><i class="fas fa-bars"></i
+            ></a>
+          </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Messages Dropdown Menu -->
+
+          <!-- Notifications Dropdown Menu -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-link">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAACslBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/v79/f37+/v5+fn////+/v74+PjR0dGioqJ6enpdXV1aWlpbW1uhoaHQ0ND4+Pj6+vq0tLRNTU0AAAAAAAAODg4oKCgpKSlKSkqxsbHe3t5QUFAxMTFDQ0NAQEA9PT06Ojo6OjpAQEAyMjJQUFDc3NzNzc0AAAArKytEREQ5OTk2NjY3NzdEREQqKioAAADFxcXS0tIAAAA+Pj49PT08PDxBQUEAAADMzMzt7e0MDAw4ODg7OzsAAADo6Oj///+CgoI/Pz8LCwt2dnb////a2tpFRUXR0dGSkpI+Pj6FhYX39/dFRUUzMzM5OTkuLi7v7+/e3t4AAABCQkLU1NTKysoAAAA/Pz+8vLy/v7+tra3///+/v783NzeKioqWlpaTk5OUlJSXl5eEhIQuLi6urq43Nzf29vbr6+s3Nzfv7+/8/Pzl5eXw8PDn5+fm5ub////////////////w8PDy8vJxcXF6enp4eHhsbGwyMjIZGRkKCgoPDw8ICAgeHh48PDw7Ozv///////84ODhBQUHAwMBISEg+Pj7x8fEQEBCvr6////+9vb0AAAAdHR0AAADw8PDl5eUAAAAPDw8aGhqrq6v19fXn5+fp6eno6Ojp6en8/Pzo6Ojn5+fz8/P////////////e2BDzAAAA5nRSTlMAAQMEDCpNcI+qwNHh8Pn+JFmSw+j/Ag1Kk9L8+/0HpOmL4ka1Usn6BUfKtolD3pEp1FuMsg7NF90b5BjlzrNcRIor///3+0j+9fDx9PT5+fHx9PPs9v3/////9ejr7////v/+////8uzw+P///v///v/65e38//7+//nr7vX//vfv9+3+//D27f/r7v7y9Pb///j08fv/7/D+//H47dP//vf39/f39f3v+vfw+/r/8vnx8kxvq+769vj4+Pf+//////////jv/v7///35+/C3+vb28vjv8Pj26fXp6+vq++nq7+rQ4LQL0RoAAAZkSURBVHgBtNLVQsMwGIbhLw0dnmAvlgSH4nPB7/+qsOP52ueoml81C5NZ/VnKa8srq2vrG5vOe7e5sb62urJcy5f0x2ZGlTD2P/rW9s7uHkPt7e5sb0mStUZl27eSDg6PjgN/QowxhOQBfAr/t/wJx0eHB5LsvsqUZdJJ7fQMIMaQGCqFGAHOTmsn//+UxRopP78AQkyesXyKAbg4zyVjSwt/efUf3TMVHwNwdSkZW0rzr2+AIjGDVAA31wsPwtxKd/dTFj+kDfd30q3R3KyUP0AMzCVEeMglO3/5t48QAnMLAR5v52xCJj09Q2QhEZ6fpEwzu5XqUHgW5AuoS7eajbFqNAmBEoRAsyFrNIN9o1bCURJHasnszzT+NkRKE6E9wyJYmQ4xUaIU6ezLTrt+3R7OUyrv6HV1O138/gBH6RyD/jQZWL284qiA4/VFdnL8t3cKKlHw/iY7af+7AwoqUvDcVaYx9rX/gaMyjo997WskY/SJo0KOTxmjUazaOCrlaMtqhFt9EalY5Eu3GipTI5GoWCI1hi+ikZpEKhdpSmboAOo4qJ6jPmwIVk8EfogtBy3dkSgKn5/jqdZuJWm7B48wSNq2bdvG2LZ5bVvPdY1WTipX+V6gvrXPXnvVU0HBm+TZfoCU156ewGsp5Np2gLeQjKdEMt7aegQ3vQ0hYIEuCSwQAm+Te4tAOlT+cUOHNLohwKEifbOAh1L5AggD0JIzMqXISNYAXkFFFnk2VTCNFciGyMnNyy8oLCq0pKiwIL+4pFRDNtvDNHJtDCCRPYCBsvKKyqrqmlopaqqrKuvqy9gQVCSSZ0MASVwAumhorGpqbmlta5eirbWjubOqqxsQTARJDyJwUzz3voGe3r7+gcEhGwwODI+Mjqk6GIN4ct8XSIDKvD8+MTnFPG+iMD0zOweDuUHCPYFQ8jEbkI35hcUl9n0T2iaXV5DNbIGPQu9WMNZ8BAVW16pamPeZDNbfefc96OZzGEueOw2MioNmHsD7o/3M+6zBBxMfmkegIS6KXLcD8DMN0JM/qlofekg+rvokGUwL/OS5LRBtLiDw6WefDzyswOIXX34FYS4QfUvARWEx3AW+/qZj6KH5duI77gYxYeQiN4UzI2Dg+x++HXrAZMePFnS0bhSo+gkGMwXh5CYPRbAj8PMmgSoJvhi6z0zVL4KbgojbJfiVTeC3qg0Cv//x519/s/z1z7//fbFB4H/BJfAr3SRAgZATWBzctVtoFmDP7KSkgIASQESBUCErsHcfDJ1lPw5IC0BFIBG9jmR5gYPQwZKNQ/ICyXidiIKhPFaBw/ICCoKJvCHQnBLQEOIlHyCcEhCAj45AhVMCUHCEjiLZOYFkHKVnnRV4lp5z8gQqjtHzUJzswPP0grMCL9CL0ODUEkLDi3QcwobACSsB3VYCAsfpZTsCu05qCo8qVmwJvExbn+f/A6dOn7Hg9Nlzi9ICgLAnMHT+QjXPxUuXF4dsCGjyJ7jNlVZLrg7JCwhcs1NC+9wgxg4NAIShGIii63Hsv0A7A3Mhn8Td3+BE+5PcP8DrG7YAvqFDlAI4RGsWYAmjFEAYieMWQByfWYBz7ck38NxbKU0PkVKqlqenWC03TMowMkxMszqOTTPjtCskxql53lYy85ygSEspQUHRpAAUDUmVApBUNF0KQNMRlSUAUUnVpgBULVmdApDVdH0NQNd/1Zs1XsdAFITz4wC4a4VLg0uF3yC3oExNyxWoaKlzBtzdgifnwAeHWeRl4NXZ3fm7zPfdFxaGAUhhgcrGLgCpbFBapR2grKAeAVDbmQXgzSWKS5sAtLhEdWsVgN8BKK9ZgLmxabeP4ymsmEcAUl6jvn8vwIK/GDzMZLC07HAPrEwEmEV/9VUAnL/mZRCAAQHWNzY3MONb2zzAzu7eBmZ/4wAB3gUYOMKRVXB4FB0/zskpC5BVMHT2tCA6vygYIAgHgVjIeXzBAIVYCMYzMPp8eIBXC7JcMB48CLlpgUy5Xt1fRLnkMJse59MCjUA622RIJ6DWDluotePmCIL1tiixXi3YjJdCd58V2t3X7QKX13m9VnB7L86X4/0UcC8UCg56xUMvueg1H4hOub8lOuUS0UmseullN73uR4THGoHwKFA+ifTaKJBeBdovEZ9DV/H5siqE+KxXv/+5/E70/ziZvdX/Z5P4B/r/NUij3vg/fOcVAAAAAElFTkSuQmCC"
+            alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3"
+            style="opacity: 0.8"
+          />
+          <span class="brand-text font-weight-light">STT service</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAICAgICAgICAgIDAgICAwQDAgIDBAUEBAQEBAUGBQUFBQUFBgYHBwgHBwYJCQoKCQkMDAwMDAwMDAwMDAwMDAwBAwMDBQQFCQYGCQ0LCQsNDw4ODg4PDwwMDAwMDw8MDAwMDAwPDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/CABEIAKAAoAMBEQACEQEDEQH/xAAeAAABBAIDAQAAAAAAAAAAAAAABgcICQQFAgMKAf/aAAgBAQAAAAC/wAAOBy4/eQAAAAxkEYtxRdGx6xrd54AABT5SGitLw6nHnHdfLz6AADOeR1pNe5c/kLCpvLEb9ZZgABUNQ/HnOspsXz2Aq9bG/W5wAAPPRVEym8s/nfkIRg4z+heYoAAUdJ2n18JttUpXNw5FXBgAAVE6+AEvGjh0qkK0dxt0CpAA6+yulkK/bF9/DpJrRDTukBNkACJqyzau+5wlVpWqwlfZG94ABHlmJ2VlNVkdzQcWwuBlYAAEfI0zirARGVq9I3KT9DCsAACPUNtYjkVHh7eDVzctcAADXQ9j3otdtIUNK56vv0WAABjRYYZDJlu1ulq5YpXl3dAAV/Rbi7KBdRZf9Ha9fR1rpkJbJaPkAHlaw8S0J2qupfR7hDOhlW03mA8k/wCdT+B5UtXj2gvmgmfhc3UhIY/V4otJnZ8j7vXl8qWuknPDoT8N425ebxweXLE1/LKkd6JPKh8uZ6m1i7Dfb7eTkd+Bi/dVgfcu+P8A/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/xAA0EAABBAEDAwIEBAQHAAAAAAADAQIEBQYABxESEyEUIggVMDEgIzJhEBZBUSUmMzQ3gbH/2gAIAQEAAQwB+i5yNRXOVGta5r2o5q9TddScc8+EVFRFTyn1so3JwzD2P+d3YQnvviaxySGRHqaWVJj2HxOZW6VKSM0DYd1uzlVrNQ066LISi3myqnbwheA7W720M6Ilbe2z40uHd1E/p9FZxpehSQHVUEVr1+nvDviaPZS8Uxg6x1sbWxsZRnOkMQ0mVIG1AvP2mPkd8RWdSuNXQpkhjjNR3W+aaMRBWIHkHVXEIbkeJFG/GN9LenjvhAbHlyNq22Cw2lsZPfkfSz3LYmFYzYXclUUmY3h32R5JTKUwpZERTCenCzHdS+9r9Y7Qy72e0bGflV23InREepV1cYQvpnwpEVisyDCLCleQgV74AJIjjYcD9bbbm3FWAVczJyY2HarJbe8p3Pup4rR30fiftegmO1bjoJl1EdHGWVI5eRXfdEVeIn+uxdbcoxvHLURYIRsE1jf0lhhei8ta5L6iiFIRCCRzbvGpVPNlgGzqjDlSklIyMYgtfCZKI5Mphm6jO+j8QQD225cqJNK48S/sCy0SP6dYkTj/AL1XgIeQMQWq8mD49bRWCKYLmNjI4bW8fcpHN588pZOQrhqjvNxABMd1Pb0uFg8x2dxKqta0knZ3bg+39VZrYKJbX6O71L803uRSNR0HIsHba1bYl2sWU+TR/JrI0XIIJnixsdVXvbZ00dw5C5HlVbQQcmscZYagHvdCklkMiY9OM2Lu/jM5EZNlLUmBb11yNhoNiKRqcMHeL0laqYht0XJb2qzeKvQD6Wa/8wZB3OE0WrqzFpp0knfm7pACbMAwoI06qfH61tTEivjMImUbfk7ZDVb1YypwOcypr5YLKTFilxNtpOOyGzuRWWEbbW7sIEuG+aOwv7G+KR8UZYQti9yce24oZdVl9kRHU15TZDBFZ0VpFuK/8bntbx1ORv8ADe+qJUvhbgQoSyFgWldd1opUaUIse1aydlrkd1IeFGQccXHKq5/seFzetZALTF474MWtJZU4b0rxujY3ilqa6lYmCvxC6iSumbYbcbeVlxlVbBOHtx9zfh926jUV1ktWOwpbPYPbaZtlgjaq2QKXn491SKCLSFRyom3d4a2qTRJj1JN3LoLDJ8GyKjqnMbYR8QHS4njdNOVyn/lSmV9Xcsj9E2MVf0JpPd+yS3NfwFq+62nw63uEsJw6yEsuFYVyyYdgGwh7T4PbpePlUt06pHExe4PaxbLJsk+eD+hubCZMxrqdz1bbEWDkcyG56qi+POs1kNk2KOb4SFM9RWiCngg1VNGlOAJV54VclRkheh/Wp7aHO5fJAIqx1c2zIOuYKLF2ggLHxf1r0/N+juZLbFxrpenLcdeaHl2OzXuT0uRWTKqomSlX32R1kSU89SqrIT3O+zElNVeG6nNbMG0Rl4EtBTGaxQDHCfa0UoPsAdFZC9cGfGgekX1FFWMpqeuqx/b6O54u7icj+8mROSqgGrGotrIybMZlVBFmUiKWei9TuXL5yMRyQ3LHXzVZBIad0GZ+WcE0RW+5/Oj9Tvy1dxqc2aAioGYrk2jxEuQWkXJLBn+G/RlygQYxpcl/bBk+Ukuoz4DIyBhPkAC/tNfyRrFkFkxDquoaRmyXMku6nWigOx/phNTWUUqdtTC9joWRyYb+k7vc3JWzGtc3jWMVNznNukGjiPM2gpYmPVEGnhJwD6BjBjiec5WADk2SVd2yPEq7FsqMaGEyvCkpeZFBEC7uDMZCT5zmRQn6ek82wbGyALiORuqo6EHLUvOr+GMsYnHSq39eaMV71avRe2b/APaBc5F+DJWxKrLoJ38S/wAdvv8A0QQu+R1cqwk2vxA5hJVyQgwKtlnmmQ3rnOn202xdgiy3UcQheqQ/KjTIkEklsF6Ow/c0tvkEessQtity0a+ie+C3qLCn4/Y00SWyQx06iyGqnxTxxk7ExkT16p1ryzPK4Ior0a33R8Y65pp8hPEW1tsflRplBZGrZO2fxBpZvDUZ12YkkRRHGwoSNML8JHu7r/PkheV9/levz4drbdn+Vqp6+CZBBHNrlju9zcuxD5daQbaANWhaydZFr5MMg+zuRMx7BxpNFHf6ptvd2BBHhRhU4KvdBa6EBtjRkly7HMm5YYrmyBMYQhCla0SdIWja0b0VOddpWe5vhcZzfKsad1Y9eSIC458SUjgYcmoGHdjm5uFZO5oa+6GGb/Eq8uV2iedcfZeU1iHdg41QiI3pche9HVi/aVUgnDYInHRjlTIx9slJBVePMrFl/buIrUfHC3tkCTpa9M/zEeb/ACvmtdEbbY4OY9soBXxJ0W5t6xvZuKp85sS3iWjUWGwrUVOU0vLF5+2urq93PlkhVRBk8txrdrOMWRseFbrOg4NmUDN6IFrE4FJ09f16XjnWB7cyMsR1lNP6GimhGJw0E1GCZJVEdxyqSbBo2+0nvy7MHncSrryqrE0xvVxrt+POlGmnB5/ppBNa1fHGm/20UfjnSeNKv2VNIvHu58bc5rLwu/izxPc+FGkBmRwS4xELHV/Kk8+Y8eRNlxoURndlVEYFBTwqSMnInt7rScrwh48peWiPwPOL/wCSBSHGN12A3/vpqqv9dBXh2sQ29mZlX202LaBhP/8AfH9dK3xrhEdrjj7/AGexW/un7aIvDWpoL1R3VrYjJfnOI/LDE6pX/8QAPhAAAgECBAMFBQUHAgcAAAAAAQIDABEEEiExBRNBIlFhcZEQMEKBsSMyM6HBFCBSYoKS0VNyFTVjo8Lh8P/aAAgBAQANPwH3Ki7MdhTC6sOo9nfR2Pv00OCiPNmv3ZF2+dbPPiWWEMLr8Ivpa/WmusMfLAyA2+IUo7GFU2iN/wCVTrTCwBmkFr7kLIXGvp4UkkhhLxBUyM3ZUsP4fp5U6GReVKrnKNzYHxoXuAe45T6Ee8weZeIcQ1UlxcEA6HKPDfyrPd8S/akY9bA7USSyltT9azdhVO/ffvrWzdfWl/DN/wDNDW5Ym1vpWKkj5vEpu1MyJqqMwuxF9/DSpsMcRiB3SYiTObWJFtPW/u0HJwEP+piJNEX9T4A1iHaTmAMt9dbipen1rrn1H5Un48gWwt/CKI7riibJigCLUuth95VO1DV0OvnRIvPmmkUnpdAWHgNKM5TAY+MKHeMLm+1Cdm/X56+6iifFRxsbK0sr8pb9NgbedSDlQw7KGN7sflV6vvTbmh+utd17ipF7PgNf81zM0dvhv3eFA5XhttrbQgVCIWE7X7PaYEa/xaenusHHDy8O9hkjEav2PmTUJPJjK5SRsPY57KLrRt9/T0FaXHS1NsQKUdq4sfSgxYMVNjptXHYVfB4Z7Wb9oNtCdNGFcanWbFCI5gioLKubS+pPusFweHHYjDk2WaVfs0SQjodPQiuIRyDCqIkgOEnC5o+WVFyNLGojaFcNrqDrn2uPKluCs8RI/tcfQ1j35OF4pFKEBe7AKyZnKk5TuBWGOWWVF5ii2l7rtSm1pkYeWhqzkMp7JUHw2+VYcrms5ub6/Ea4FDgIcK6trLPHiuZOPDKvu/8AhWCbD365W7RPkctTTkOzntIxDWUfyt3iuTEMS3RL0sYu1up8ac/aQnUedTlpZsPGTZkMm4II7WUda0yQY3K57tDanwiyRGA8z9kZyRlYEgZWt11FA86WV5GLWbTO2RTpXEMYJmxsGIhx0OH7AX7WGFziI72uSYrba1P+FjMHKs0Z8Myk6+HuCbC5tr7OHCPC8ZybthWYq1/7xY+FPeTBYojRSp1yk7FSLGsROuY758pFvlYUAKK3tb0pWZoMOxyzwByWKRy2KSJc9kPlI2uamOUz4uFEihHVzJnKm1cVhlk41jiLmWRlNgP5U+H13NYl4/24w2HORLNZvA26VgYmxHD8NhJzLHLiybQxrHMJDeSTKoCEb1xXGS8T4usBzJG8wVVhzaXyIoBtpe9tPcPinhI6dpLg/lXCZeS7tqWjbWMk+o+VY3Dj9mEn3WaN1kyH/dltUOGlnxYBIvJPK8jfWuQrSMCbMyjICR/TWx7qFd1YOPmYrEykhRc26VPHniljOZXA8a4WjZI58OuMgW/ZVArMjr5B7DpXDjzOG8JgwaYPCxz7CdxnmeR1H3bvYb2vr7nC4uCRGHS5yH8mrieDz2Y/HA2n5MfZkJ08WJrBtJC69bZs6H0ar1+VqBtmGtDQ8xAwt5Gp5OfKyj49r5dugriMzOznchdPrf3WLxcMJ9S//jWLMmG0/wCopVb38SKyFIR3s2g/zVrGpW7RrW9E2PcR3Gm0OT7JWtttpROzdf6h/isYE5c2YMPtDlAW3xX76wUCRse9rdo/M+6jxEDj++361gW5mDQ2I5iDMhI7swF6zuxXBJliQGwCnvNH/wCtVrF/0qP8GQ7MO7zrqp8aPSr7GuA2XCXH42JXUfJL387e6gXNI1Oysc+sjZTcX6Cn3UGmucLc7W6VBvCeviaHYkAFgdKQ3H8QNJu/Q276A1uwsfSkZVxmMseTArdZG2At03PSsFGEzdXbdnPix19zEM0k0hCqo7yTSkvLPA10LDs5b+FAXIBsbedL2s4fNtrrWGkAkPgD/isXEyFPHdT9a5g7XmNqYb1qb033yptp3VjpsPjIYm+8Y41Mbt8iy+vuAd58kUY/tdmPpVrBY1Mr+eaTS/yptRh55ysIPjGDb0FNLKZW2tdzawHQVAhkSfDOjAFR1DZD56ViI5Fw5DXEki2Oo6dm9OjHljrYE068xxcFw6qBlI3FQOxOEk3kW/4iHqPpW9hVrDSr2hj/AFrh0ITD4nDnKdLFgehB6g09lw/Hohkic906fB/uGneBUgzRyoQysO8EfvBjY13+yUym/hzCKcjnDvW+xozvNlX4chVunhWVWZjr2G3t8q4xK0MOHw4BY6XdgCRa360pzQ4nEFnlFuoC5QKWBTJiIm5XONvxEjZdm86Q9vh6XWRP96vZvyqM3Ld9MpHrS0pzScPJ5mGk8eS919LVoHxnDXyHz5Mxt/3KYf8ALcZfDz+QWS2b+kn9wk38/a2HL5PCR2Yfkat3WqQuieFwRelvyFJ0UX6VgxycK1r9bsw8zUcgORhdTboR3Vw/nuJJZua4acpeOMhUyxJk7K69ai1ixSE3v49aTbiGCsSR/MhtSG83OQoVI2XX2A11oaqeoPhS2y4HHDnpYdFJ7S/I0v2fEsDe5hmG48juD3ezM3shcoZF/FnZfvLH0AHVjUAEcaDoiiw9BR016UNI18TpekumJxA/NVPsBH19po7/ALo1qYiLimFvpLCTr8xuKxMaywSjZkcXB9KVzesZIsMEY6u5sK4fCI84+J93f+piT7GPUfrWLBAk/wBNNmb9B/6rqfZtXD5OTDA8TScyVo3l+0ZSOUlltnOl/YP3Oh9jGl2rgEnJ135Enaj9NR8q/8QAJRABAQACAgICAgIDAQAAAAAAAREAITFBUWFxgTCxkaEQwdEg/9oACAEBAAE/EPwp/AhACqroAwB4CFEKI+ExQFWBtXEaAi7annHTACDRHsT81mJDxAe0orfYxhnCwOO12hwrkdWMI0XcoiF6fvKaDQ4rJdndRzXQ5wrSFexrpi2iIa7UgHhNGj2we7CNHBVICOTDiMglL8HkD4fyHW01BgBH2hW3ourCT3EqhXScGQQjg1aGqS+TBUg9VU2uX3hhaVRCHIJNvNzf5AUQNUa577yGdSncRKjEwOukrNTq4h28nWLEcAAfcgIBzseKAjs/EBcr+bTHYNykerblOCXtXesBwJVCzU4NI4Gz3QK/hNt4s4I0whnDDt7e8pcukFtlnLxm6NAAibvs6y4ySL3B8idjl8io2k6Lf5MZFxO+laQDggHvN1hum9WJDRugB/EcfhgxS8gVPbzgSb+RZEKVA7clyanRe+MW+yCVE/eFPYYAJ7jhlgC1TV1PtyQaNsQnjBrFBOgB/bB8aUN63blQh6x85QgPOi1HmYFxVQtCmhAmG+Vh+J3fYjFXaJ2tqvnLiLNRhQ4kCv8A3Fa2jmzn4wrCwCtsKH67wK7JbMeomILUA06D3zc2diIDdw5f1mtKCzbeYqD2GEGEoBNNjezJy9yAR4jZvU+sCEk15CAQjRPxKgM41hBbbgbOxi88JihEaIGveO4/bNGLw1ljjPRCPezSZ39mGqoijSjEiwLxjJxD6iqdGapvNCEW7qUVI/PuY9R2vAPMK2/bDQSKTiipScCYHg/iKOPF9vlh2/jcUjPC8Z/M4Hgve9Vx9jsrH5AXTMevVGQVgeYVeP1gAr2NQr5bcko5ooki6pZeTBTvQMaJBEGzG0T0DV0PknO8Yj2oKgEAJVDVOBz3vzJBR00MwIUVddgH1B0nAf0OlgdEBdrZ2fgpjyUqXAXv/BuQknMx1dicJF2ZE8lqmIAug5Gjh5r57BAI+QfJcG0PAcGpN9HvFklQ9CsT94oSs87KUrA3TCH1GgKzV0dFn6ZZn+o4OwYDX2M1AOAFiyMjrCmAioKMG8xArBkVkhjSkXQOwYX/ANz1SNeZJwjJ85W3fEVebWbcQQw9dbxOLO+XIER/Hhm4QA9GLEPzvSG9DjFNjWx0vNPe8A46ArbwcTKjr4fGveMlELkgXZdgAG1zZjB5UlDvyMTjJb06x6HQWaBoGEH0niUrQTe1GsfgAQSs2W16rlc/VkJprtuICmBtXxm5LUcACD6c1mXI2b/oH1lCO2WeJz9YkTNlYBwt4zlnEIOeLXjnjFyIWZpLaGnzhUQS4goGVIM/1iJXNRpivdX4ldUYCgUK9anGGCQNjrhd8BwyQk+kbD4L9McRKaFus1gNX1Gav84Dcl2K2mknOO6WJU7TCacPoQ7sETJU8m86NDcGN7VExPWABE1lFR3BBOcjpCvB196v4rsFinJpr9Yn+XIGrta6tbxUFlKKUNYNZNw8rcq6fGIgCOTNU+XnEZaiiLVehx5MAzl1IKOnbfgwLDNfRS6dfGHMtPiBXycLrITY6EnrFavo8/iMCw0WBwAbVdB24gf4rnwEOgpvG0dBCU0EutYf0JDPY2802YJzYR9ANz95Bp0AgDIeL1kzk6NERG9zpwRByzAqJOG8znLnHoA7lU1k51iNItCIytEDkHpjIj7Uq+fwqKKJLysAHlctszgdHQ82lN4LAWlEzVdYHjwpD0UOtbO81TdGryH5dwJ8ZNo5k9DL+dx05IvMhiQFCJnPGnvNgNAOucYUuKCjpJy47+56MheQT8A7nLSA7U+DR841IPc54aPCTj1mgIcbIHQOVlDKscoER0F15zc2q6IUhQ00Tku8aA0ZAYwU6Cu8d5idHSB3gTOFRwU6tie7jl5VDgO1Eob7EjmiEaak8ZbXbQOuPrDAFhO+Hb9vWTuMDGQxVEAicmFud4XmtE+X1O8APdGHYkiPkf8A0eKNwb0uICvV5fanOA33Xg5zjjQb2X8GaUmE6DZvCcneamCYlmHohmAEBehWTOUuYXIZERgALC3kZwWtrKlMer/OdYzFwKAEKBHhx+4nTF4IqeWMhQJRtdTJhVh5GAf5cZVVUjJPEwxINhu4QfIV2ORnGxc4Uyu9D0YK6zCt1pn1vvL/AJRD/oEf1kolU8YWwJzvGmJwGiHvyDkCt1v4O8AseUIQcdmM/IvNgZWAvjHMZYKB1L/zDFeQuZhfKSFPGGhVsESOqBqLscZ04rIuKtH3hALQxbvnPZPjEbUqsRDktrGcYVzfmecimrQ8cYtwr6ee+MWmw+kldYhndIEtsJNIOawJJLO2L1LfsIYVHWr7b/vLRbj6A8WHE8gHY0C2cJFcwjPgDDaC24e3GFGdzPnpfFXFZhodbO027foyOPGp1iqJWBzoF194jZb/AKxxfPnD5Cdn95ILbI7+cEWueaY6gU79Y0yV6mJeF5ynqdvfX94Jcs+gvG+vknC4tjQaAP6UOEJoMfMcRMDSoJa6rv1lExac1V7+0YzLu1evvArOU8HaE/WBD3uHQed7+S4VLVdo1V325xlH9YgJOq65P94aNwrBYy/C8MyLLE8h8cXES8PDCgI1RmcRuu35xsnL0Y2wG34BzlY6uslt079Bf+ZvBBfyzo5sVVF8xHxjP//EABQRAQAAAAAAAAAAAAAAAAAAAID/2gAIAQIBAT8ASH//xAAUEQEAAAAAAAAAAAAAAAAAAACA/9oACAEDAQE/AEh//9k="
+                class="img-circle elevation-2"
+                alt="User Image"
+              />
             </div>
-            
+            <div class="info">
+              <a href="#" class="d-block">Alexander Pierce</a>
+            </div>
           </div>
-        </div><!-- /.container-fluid -->
-      </section>
-  
-      <!-- Main content -->
-      <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">DataTable with minimal features &amp; hover style</h3>
+
+          <!-- SidebarSearch Form -->
+
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <!-- Add icons to the links using the .nav-icon class
+     with font-awesome or any other icon font library -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" style="min-height: 731px">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row justify-content-md-center">
+              <div class="col-md-10">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Upload Media file</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form id="file_upload_form" onsubmit="return false;" enctype="multipart/form-data">
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label for="exampleInputFile">File input </label
+                        ><em style="font: size 8px">
+                          (Supported formats: mp2, mp3, mp4, wav, acc, flac,
+                          avi, ogg)</em
+                        >
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input
+                              type="file"
+                              class="custom-file-input"
+                              id="file-upload"
+                              name="file"
+                            />
+                            <label
+                              class="custom-file-label"
+                              for="exampleInputFile"
+                              id="file-upload-label"
+                              >Choose file</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="file-save-check"
+                          name="is_save_file"
+                        />
+                        <label class="form-check-label" for="exampleCheck1"
+                          >Save file in the server</label
+                        >
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer" style="text-align: center">
+                      <button class="btn btn-primary" id="file-submit">
+                        Transcribe
+                      </button>
+                    </div>
+                  </form>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                      <th>Rendering engine</th>
-                      <th>Browser</th>
-                      <th>Platform(s)</th>
-                      <th>Engine version</th>
-                      <th>CSS grade</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <tr>
-                      <td>Misc</td>
-                      <td>PSP browser</td>
-                      <td>PSP</td>
-                      <td>-</td>
-                      <td>C</td>
-                    </tr>
-                    <tr>
-                      <td>Other browsers</td>
-                      <td>All others</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>U</td>
-                    </tr>
-                    </tbody>
-                    
-                  </table>
-                </div>
-                <!-- /.card-body -->
+                <!-- /.card -->
               </div>
-              <!-- /.card -->
-  
-              
-              <!-- /.card -->
             </div>
-            <!-- /.col -->
+            <!---------------------------------- Results part----------------------------------------------------------- -->
+            <div class="row mb-2">
+              <div class="col-sm-12">
+                <h1>All audio transcriptions</h1>
+              </div>
+            </div>
           </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="float-right d-none d-sm-block">
-        <b>Version</b> 3.1.0-rc
+          <!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card card-danger">
+                  <div class="card-header">
+                    <div class="col-sm-9">
+                      <h3
+                        class="card-title"
+                        style="
+                          /* margin-top: 3px; */
+                          color: #fff;
+                          font-size: 1.5em;
+                        "
+                      >
+                        Filter audio data ➜
+                      </h3>
+                    </div>
+
+                    <!-- SEARCH FORM -->
+                    <div class="col-sm-3" style="float: right">
+                      <form
+                        class="form-inline ml-3"
+                        id="filter_form"
+                        onsubmit="return false;"
+                      >
+                        <div class="input-group input-group-sm">
+                          <input
+                            class="form-control form-control-navbar"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            name="query"
+                            id="search_query"
+                          />
+                          <div
+                            class="input-group-append"
+                            style="
+                              height: 31px;
+                              border: 1px solid #ced4da;
+                              border-radius: 0 0.25rem 0.25rem 0;
+                              background-color: white;
+                            "
+                            id="filter_btn"
+                          >
+                            <button class="btn btn-navbar">
+                              <i class="fas fa-search"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table
+                      id="example2"
+                      class="table table-bordered table-hover"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Media File Name</th>
+                          <th>Audio File Path</th>
+                          <th>Transcribed Text</th>
+                        </tr>
+                      </thead>
+                      <tbody id="table_data_body">
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer" style="text-align: center">
+                    <button
+                      class="btn btn-danger"
+                      style="margin-right: 1em"
+                      id="get_all_data"
+                    >
+                      Get All Data
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card -->
+
+                <!-- /.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
       </div>
-      <strong>Copyright © 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
-  
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    <div class="p-3 control-sidebar-content"><h5>Customize AdminLTE</h5><hr class="mb-2"><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>No Navbar border</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Body small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Navbar small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Footer small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav flat style</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav legacy style</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav compact</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav child indent</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav child hide on collapse</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Main Sidebar disable hover/focus auto expand</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Brand small text</span></div><div class="mb-4"><input type="checkbox" value="1" class="mr-1"><span>Dark Mode</span></div><h6>Navbar Variants</h6><div class="d-flex"><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-secondary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lightblue elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-cyan elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div></div><h6>Accent Color Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lightblue elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Dark Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lightblue elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Light Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lightblue elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Brand Logo Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-secondary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lightblue elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-cyan elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><a href="#">clear</a></div></div></aside>
-    <!-- /.control-sidebar -->
-  <div id="sidebar-overlay"></div></div>
-  <!-- ./wrapper -->
-  
-  <!-- jQuery -->
-  <script src="admin_lte/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="admin_lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- DataTables  & Plugins -->
-  <script src="admin_lte/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="admin_lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="admin_lte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="admin_lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="admin_lte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="admin_lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="admin_lte/plugins/jszip/jszip.min.js"></script>
-  <script src="admin_lte/plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="admin_lte/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="admin_lte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="admin_lte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="admin_lte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="admin_lte/dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="admin_lte/dist/js/demo.js"></script>
-  <!-- Page specific script -->
-  <script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-  </script>
-  
-  
-  </body></html>
+      <!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="float-right d-none d-sm-block"><b>V</b> 1.0.0</div>
+        <strong
+          >Copyright © 2021
+          <a href="#">Speech 2 Text transcription service</a>.</strong
+        >
+        All rights reserved.
+      </footer>
+      <div id="sidebar-overlay"></div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="static/js/adminlte.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+      integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+      crossorigin="anonymous"
+    ></script>
+    <script src="static/js/init.js"></script>
+    <script src="static/js/results.js"></script>
+  </body>
+</html>

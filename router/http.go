@@ -51,14 +51,14 @@ func attachSecurityLayers(r *gin.Engine) {
 		MaxAge:           12 * time.Hour,
 	}))
 
-	//setting-up security headers
+	// setting-up security headers
 	r.Use(secure.New(secure.Config{
-		FrameDeny:             true,
-		ContentTypeNosniff:    true,
-		BrowserXssFilter:      true,
-		ContentSecurityPolicy: "default-src 'self'",
-		IENoOpen:              true,
-		ReferrerPolicy:        "strict-origin-when-cross-origin",
+		FrameDeny:          true,
+		ContentTypeNosniff: true,
+		BrowserXssFilter:   true,
+		//ContentSecurityPolicy: "default-src 'self'",
+		IENoOpen:       true,
+		ReferrerPolicy: "strict-origin-when-cross-origin",
 	}))
 }
 
@@ -104,7 +104,6 @@ func setupApiRouter(r *gin.Engine) {
 
 //setup only WEB specific endpoints
 func setupWebRouters(r *gin.Engine) {
-
 	//set static assets to load directly
-	r.Static("/web/", "./web/static")
+	r.Static("/", "web/")
 }
