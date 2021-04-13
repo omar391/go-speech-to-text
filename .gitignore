@@ -28,3 +28,4 @@ web/pnpm-lock.yaml
 **/build
 data/*
 go/
+app

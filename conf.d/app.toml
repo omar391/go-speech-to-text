@@ -1,5 +1,5 @@
 # listen addr of http api server
-addr = "127.0.0.1:5000"
+addr = ":5000"
 
 # data directory
 data_dir = "./data/"
