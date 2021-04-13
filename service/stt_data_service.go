@@ -144,7 +144,7 @@ func processAudioInGCP(filename string) (string, error) {
 func convertAudio(original_name string, file_to_convert string) (string, error) {
 	//raw command: ffmpeg -i ./data/voice.mp4 -vn -y -t 5 -ar 24000 -ac 1 -compression_level 12 ./data/out.flac
 	d_true := true
-	duration := "5"
+	duration := "60"
 	audio_rate := 24000
 	audio_channels := 1
 	compression_level := 12
