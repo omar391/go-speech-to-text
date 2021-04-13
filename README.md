@@ -1,13 +1,12 @@
 # Speech to Text service using GO-Lang (db: `SQLite3`)
 ⭐ For API we are using `GIN` http server.
 <br>⭐ We have demonstrated how to use `security related headers` for the endpoints.
-<br>⭐ Used FULLTEXT search indexing using FTS4 module to filter audio data faster.
+<br>⭐ Used FULL-TEXT search indexing using FTS4 module to filter audio data faster.
 <br>⭐ Set-up `docker-compose` for easier deployments.
 <br>⭐ Set-up `GitHub actions` for CI purposes.
 <br>⭐ Included `TEST` suites
 <br>⭐ Included `POSTMAN` collections for easier testing.
 
-# NOTE: This project is still in active development. Many features are still incomlete and buggy.
 
 <br>
 
@@ -17,7 +16,7 @@
 <br>
 
 ## How to config
-- HTTP configurations (port, dabase-path) are in the toml file: `./conf.d/app.toml`
+- HTTP configurations (port, database-path) are in the toml file: `./conf.d/app.toml`
 
 ## API Security
 We are taking following measures to ensure API security.
@@ -30,7 +29,7 @@ Token based JWT security check: Coming soon
 
 ```
 
-### Web gneral security
+### Web general security
 ```
 	//setting-up cors headers
 	r.Use(cors.New(cors.Config{
@@ -78,20 +77,37 @@ nodemon -e js,go,json,html,css,toml --exec go run main.go --signal SIGTERM
 
 ### Login and get an access token
 ```
-curl http://127.0.0.1:5000/login?user=a&pass=a
+curl -X POST -d [options] http://127.0.0.1:5000/login
+OPTIONS: user=a pass=a
 
-TODO: convert it to POST method
+```
+
+### Register and get an access token
+```
+curl -X POST -d [options] http://127.0.0.1:5000/register
+OPTIONS: user=a pass=a email=a@a.com
+
+```
+
+### Transcribe to get audio text data
+```
+curl -X POST -d [options] http://127.0.0.1:5000/transcribe
+OPTIONS: token=<token> file=<file> is_save_file=<true/false>
+
 ```
 
 ### Get all audio transcribed JSON  data
 ```
-curl http://127.0.0.1:5000/all-data?token=<token>
+curl -X POST -d [options] http://127.0.0.1:5000/all-data
+
+OPTIONS: token=<token> page_no=1
 ```
 
-### Search AUDIO text with criteria: text
+### Filter AUDIO text with criteria: text
 ```
-curl http://127.0.0.1:5000/search?token=<token>&text=beautiful
+curl -X POST -d [options] http://127.0.0.1:5000/filter
 
+OPTIONS: token=<token> page_no=1 query=<search_term>
 ```
 
 
@@ -104,11 +120,30 @@ docker-compose up
 ## How to push to Heroku
 
 ```
-coming soon
+1. Install Docker
+2. Install Heroku cli
+3. Create a Heroku project
+4. Run docker container locally. Then run these commands:
+
+- heroku login
+- heroku container:login
+- heroku create
+- heroku container:push web
+- heroku container:release web
+- heroku open
+
+```
+
+## TODO:
+
+```
+- Create and run unimplemented  test suites.
+- Config GitHub actions to run properly.
 ```
 
 ## References
 
 ```
-coming soon
+- Admin panel used in the UI: https://adminlte.io/
+- GIN API documentations: https://github.com/gin-gonic/gin#readme
 ```

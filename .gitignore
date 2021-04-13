@@ -27,3 +27,4 @@ web/pnpm-lock.yaml
 **/.parcel-cache
 **/build
 data/*
+go/

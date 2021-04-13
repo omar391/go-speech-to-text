@@ -19,8 +19,11 @@
     "cSpell.words": [
         "Csgt",
         "EXTS",
+        "Nosniff",
+        "Proto",
         "Qscale",
         "Rdescudv",
+        "SIGTERM",
         "Tabler",
         "Tmaa",
         "UNINDEXED",
@@ -35,6 +38,7 @@
         "rtmp",
         "speechpb",
         "streamid",
+        "testcache",
         "treeview",
         "vframes"
     ],

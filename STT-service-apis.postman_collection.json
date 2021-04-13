@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "b5dfe52d-910a-4e7d-a2eb-86965503e57b",
+		"name": "STT-service-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "a@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/login",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register a new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "a@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "a",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "{{$timestamp}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/register",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transcribe AUDIO files to text",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTg0MTQ5OTYsInVpZCI6MX0.179tBP0o9jCnoQcG73IPez2NfUbdLERzUkCJMdAffOQ",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/Dropbox/Projects/interviews/go/speech-text-service/data/test6.mp3"
+						},
+						{
+							"key": "is_save_file",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/transcribe",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"transcribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all data for current user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTg0MTQ5OTYsInVpZCI6MX0.179tBP0o9jCnoQcG73IPez2NfUbdLERzUkCJMdAffOQ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/all-data",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"all-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter data by query string",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTg0MTQ5OTYsInVpZCI6MX0.179tBP0o9jCnoQcG73IPez2NfUbdLERzUkCJMdAffOQ",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "Family",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/filter",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"filter"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "127.0.0.1:5000"
+		}
+	]
+}

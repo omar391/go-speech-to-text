@@ -18,6 +18,6 @@ jobs:
       with:
         go-version: 1.16
 
-    - name: build
-      run: docker build ./
+    #- name: build
+    #  run: docker build ./
     #- name: publish
