@@ -5,10 +5,13 @@
 <br>⭐ We have demonstrated how to use `security related headers` for the endpoints.
 <br>⭐ Used FULL-TEXT search indexing using FTS4 module to filter audio data faster.
 <br>⭐ APP ensure security with statefull HMAC SHA256 JWT tokens.
+<br>⭐ Included `FFmpeg` lib for proper STT service input. The app supports these media type as file input: ` mp2, mp3, mp4, wav, acc, flac,
+                          avi, ogg`
 <br>⭐ Set-up `docker-compose` for easier deployments.
 <br>⭐ Set-up `GitHub actions` for CI purposes.
 <br>⭐ Included `TEST` suites
 <br>⭐ Included `POSTMAN` collections for easier testing.
+
 
 `DEMO app:` https://protected-mountain-13923.herokuapp.com/
 
@@ -38,7 +41,7 @@ We are taking following measures to ensure API security.
 
 ### API security
 ```
-Token based JWT security check: Coming soon
+Implemented statefull HMAC SHA256 JWT tokens verifications.
 
 ```
 
