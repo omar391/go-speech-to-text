@@ -30,6 +30,7 @@
         "WRWJ",
         "apiv",
         "floostack",
+        "gofiber",
         "gonic",
         "gorm",
         "naoina",
@@ -40,7 +41,8 @@
         "streamid",
         "testcache",
         "treeview",
-        "vframes"
+        "vframes",
+        "wasm"
     ],
     "todo-tree.tree.showBadges": false,
     "todo-tree.tree.showCountsInTree": true,
